@@ -12,7 +12,7 @@ class MainTest {
     @CsvSource({
             "1234, true",
             "1111, true",
-            "321,false",
+            "321, false",
             "12321, false"
     })
     void testTidyNumber(int number, boolean expected) {
