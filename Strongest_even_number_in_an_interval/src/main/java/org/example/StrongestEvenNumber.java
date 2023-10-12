@@ -7,16 +7,20 @@ import java.util.Collections;
 
 public class StrongestEvenNumber {
     public int strongestEven(int n,int m){
-        ArrayList<Integer> numbers  = new ArrayList<>();
-        ArrayList<Integer> index = new ArrayList<>();
-        for(int i = n; i <= m;i++){
-            if(i % 2 == 0) {
-                numbers.add(divideByTwo(i));
-                index.add(i);
+
+
+        int dividedNumber = 0;
+        int strongestNumber = 0;
+        int start = n % 2 == 0 ? n : n + 1;
+        for(int i = start; i <= m;i++){
+            if( divideByTwo(i) > dividedNumber ) {
+                dividedNumber = divideByTwo(i);
+                strongestNumber = i;
+
             }
 
         }
-        return index.get(numbers.indexOf(Collections.max(numbers)));
+        return strongestNumber;
 
 
 
